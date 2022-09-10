@@ -1,2 +1,0 @@
-# TokensCorDapp
-tokens example
