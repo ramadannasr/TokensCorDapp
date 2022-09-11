@@ -13,9 +13,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Gradle') {
+        stage('Build TokensCorDapp jars') {
             steps {
-                bat 'gradlew.bat clean build test prepareDockerNodes'
+                bat 'gradlew.bat clean build  prepareDockerNodes'
+            }
+        }
+        stage('Unit & Integration Tests') {
+            steps {
+                bat 'gradlew.bat test integrationTest'
             }
         }
     }
