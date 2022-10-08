@@ -15,13 +15,13 @@ pipeline {
     stages {
         stage('Build Tokens CorDapp ') {
             steps {
+                sh 'cp nodeConfigFiles/buildDockerNodes.gradle .'
+                sh 'mv "buildDockerNodes.gradle" "build.gradle"'
                 sh './gradlew prepareDockerNodes'
             }
         }
         stage('Apply Configuration') {
             steps {
-                sh 'cp nodeConfigFiles/buildDockerNodes.gradle .'
-                sh 'mv "buildDockerNodes.gradle" "build.gradle"'
                 sh 'cp "nodeConfigFiles/Diahnne Abbott.config" .'
                 sh 'cp "nodeConfigFiles/Peter Boyle.config" .'
                 sh 'cp "nodeConfigFiles/Robert Anthony.config" .'
@@ -39,11 +39,6 @@ pipeline {
             }
         }
         stage('Run Unit & Integration Tests') {
-            steps {
-                sh './gradlew test integrationTest'
-            }
-        }
-        stage('Archive Build artifacts') {
             steps {
                 sh './gradlew test integrationTest'
             }
