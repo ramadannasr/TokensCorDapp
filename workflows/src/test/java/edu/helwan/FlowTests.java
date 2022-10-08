@@ -1,8 +1,8 @@
-package com.bootcamp;
+package edu.helwan;
 
-import com.bootcamp.contracts.TokenContract;
-import com.bootcamp.flows.TokenIssueFlow;
-import com.bootcamp.states.TokenState;
+import edu.helwan.contracts.TokenContract;
+import edu.helwan.flows.TokenIssueFlow;
+import edu.helwan.states.TokenState;
 import com.google.common.collect.ImmutableList;
 import net.corda.core.concurrent.CordaFuture;
 import net.corda.core.contracts.Command;
@@ -43,7 +43,8 @@ public class FlowTests {
 
     @Test
     public void transactionConstructedByFlowUsesTheCorrectNotary() throws Exception {
-        TokenIssueFlow.TokenIssueFlowInitiator flow = new TokenIssueFlow.TokenIssueFlowInitiator(nodeB.getInfo().getLegalIdentities().get(0), 99);
+        TokenIssueFlow.TokenIssueFlowInitiator
+                flow = new TokenIssueFlow.TokenIssueFlowInitiator(nodeB.getInfo().getLegalIdentities().get(0), 99);
         CordaFuture<SignedTransaction> future = nodeA.startFlow(flow);
         network.runNetwork();
         SignedTransaction signedTransaction = future.get();

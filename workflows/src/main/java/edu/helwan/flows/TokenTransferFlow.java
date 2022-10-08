@@ -1,8 +1,8 @@
-package com.bootcamp.flows;
+package edu.helwan.flows;
 
 import co.paralleluniverse.fibers.Suspendable;
-import com.bootcamp.contracts.TokenContract;
-import com.bootcamp.states.TokenState;
+import edu.helwan.contracts.TokenContract;
+import edu.helwan.states.TokenState;
 import com.google.common.collect.ImmutableList;
 import net.corda.core.contracts.StateAndRef;
 import net.corda.core.flows.*;

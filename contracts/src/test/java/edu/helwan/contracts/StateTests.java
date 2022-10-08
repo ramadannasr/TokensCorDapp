@@ -1,6 +1,6 @@
-package com.bootcamp.contracts;
+package edu.helwan.contracts;
 
-import com.bootcamp.states.TokenState;
+import edu.helwan.states.TokenState;
 import net.corda.core.contracts.ContractState;
 import net.corda.core.identity.CordaX500Name;
 import net.corda.core.identity.Party;

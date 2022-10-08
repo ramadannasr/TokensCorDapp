@@ -1,14 +1,12 @@
-package com.bootcamp.states;
+package edu.helwan.states;
 
-import com.bootcamp.contracts.TokenContract;
+import edu.helwan.contracts.TokenContract;
 import net.corda.core.contracts.BelongsToContract;
 import net.corda.core.contracts.ContractState;
 import net.corda.core.identity.AbstractParty;
 import net.corda.core.identity.Party;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
