@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Build Tokens CorDapp ') {
             steps {
-                sh 'gradlew.bat clean build  prepareDockerNodes'
+                sh './gradlew prepareDockerNodes'
             }
         }
         stage('Apply Configuration') {
@@ -40,12 +40,12 @@ pipeline {
         }
         stage('Run Unit & Integration Tests') {
             steps {
-                sh 'gradlew.bat test integrationTest'
+                sh './gradlew test integrationTest'
             }
         }
         stage('Archive Build artifacts') {
             steps {
-                sh 'gradlew.bat test integrationTest'
+                sh './gradlew test integrationTest'
             }
         }
     }
