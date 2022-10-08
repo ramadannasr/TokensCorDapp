@@ -88,7 +88,7 @@ dependencies {
 
 task prepareDockerNodes(type: net.corda.plugins.Dockerform, dependsOn: ['jar']) {
 
-    dockerImage = "corda/corda-zulu-java1.8-4.8:latest"
+    dockerImage = "corda/corda-zulu-java1.8-4.8.6"
 
     nodeDefaults {
         projectCordapp {
@@ -103,10 +103,10 @@ task prepareDockerNodes(type: net.corda.plugins.Dockerform, dependsOn: ['jar']) 
     
     node {
             name "O=Diahnne Abbott,L=New York,C=US"
-            p2pAddress "0.0.0.0:10003"
+            p2pAddress "diahnne-abbott:10002"
             rpcSettings {
-                address "0.0.0.0:10013"
-                adminAddress "0.0.0.0:10043"
+                address "diahnne-abbott:10013"
+                adminAddress "diahnne-abbott:10043"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -116,10 +116,10 @@ task prepareDockerNodes(type: net.corda.plugins.Dockerform, dependsOn: ['jar']) 
     }
     node {
             name "O=Peter Boyle,L=Los Angelos,C=US"
-            p2pAddress "0.0.0.0:10004"
+            p2pAddress "peter-boyle:10002"
             rpcSettings {
-                address "0.0.0.0:10014"
-                adminAddress "0.0.0.0:10044"
+                address "peter-boyle:10014"
+                adminAddress "peter-boyle:10044"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -129,10 +129,10 @@ task prepareDockerNodes(type: net.corda.plugins.Dockerform, dependsOn: ['jar']) 
     }
     node {
             name "O=Robert Anthony,L=London,C=GB"
-            p2pAddress "0.0.0.0:10002"
+            p2pAddress "robert-anthony:10002"
             rpcSettings {
-                address "0.0.0.0:10012"
-                adminAddress "0.0.0.0:10042"
+                address "robert-anthony:10012"
+                adminAddress "robert-anthony:10042"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -141,37 +141,11 @@ task prepareDockerNodes(type: net.corda.plugins.Dockerform, dependsOn: ['jar']) 
             sshdPort 2222
     }
     node {
-            name "O=Oracle,L=Sopot,C=PL"
-            p2pAddress "0.0.0.0:8080"
-            rpcSettings {
-                address "0.0.0.0:1001"
-                adminAddress "0.0.0.0:1002"
-                standAloneBroker false
-                extraConfig = [
-                               'rpcSettings.useSsl' : false, ]
-            }
-            devMode true
-            sshdPort 1338
-    }
-    node {
-            name "O=Network Map,L=Fegas,C=US"
-            p2pAddress "0.0.0.0:8080"
-            rpcSettings {
-                address "0.0.0.0:1001"
-                adminAddress "0.0.0.0:1002"
-                standAloneBroker false
-                extraConfig = [
-                               'rpcSettings.useSsl' : false, ]
-            }
-            devMode true
-            sshdPort 1337
-    }
-    node {
             name "O=Notary,L=London,C=GB"
-            p2pAddress "0.0.0.0:10001"
+            p2pAddress "notary:10002"
             rpcSettings {
-                address "0.0.0.0:10011"
-                adminAddress "0.0.0.0:10041"
+                address "notary:10011"
+                adminAddress "notary:10041"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -211,10 +185,10 @@ task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
     
     node {
             name "O=Diahnne Abbott,L=New York,C=US"
-            p2pAddress "0.0.0.0:10003"
+            p2pAddress "diahnne-abbott:10002"
             rpcSettings {
-                address "0.0.0.0:10013"
-                adminAddress "0.0.0.0:10043"
+                address "diahnne-abbott:10013"
+                adminAddress "diahnne-abbott:10043"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -224,10 +198,10 @@ task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
     }
     node {
             name "O=Peter Boyle,L=Los Angelos,C=US"
-            p2pAddress "0.0.0.0:10004"
+            p2pAddress "peter-boyle:10002"
             rpcSettings {
-                address "0.0.0.0:10014"
-                adminAddress "0.0.0.0:10044"
+                address "peter-boyle:10014"
+                adminAddress "peter-boyle:10044"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -237,10 +211,10 @@ task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
     }
     node {
             name "O=Robert Anthony,L=London,C=GB"
-            p2pAddress "0.0.0.0:10002"
+            p2pAddress "robert-anthony:10002"
             rpcSettings {
-                address "0.0.0.0:10012"
-                adminAddress "0.0.0.0:10042"
+                address "robert-anthony:10012"
+                adminAddress "robert-anthony:10042"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
@@ -276,10 +250,10 @@ task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
     }
     node {
             name "O=Notary,L=London,C=GB"
-            p2pAddress "0.0.0.0:10001"
+            p2pAddress "notary:10002"
             rpcSettings {
-                address "0.0.0.0:10011"
-                adminAddress "0.0.0.0:10041"
+                address "notary:10011"
+                adminAddress "notary:10041"
                 standAloneBroker false
                 extraConfig = [
                                'rpcSettings.useSsl' : false, ]
