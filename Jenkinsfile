@@ -12,6 +12,9 @@
 pipeline {
     agent any
 
+    environment {
+        JENKINS_UID = sh(returnStdout: true, script: "id -u ${USER}").trim()
+    }
     stages {
         stage('Build Tokens CorDapp ') {
             steps {
@@ -22,6 +25,7 @@ pipeline {
         }
         stage('Apply Configuration') {
             steps {
+                sh 'bash -c "chown -R ${JENKINS_UID} /build"'
                 sh 'cp "nodeConfigFiles/Diahnne Abbott.config" .'
                 sh 'cp "nodeConfigFiles/Peter Boyle.config" .'
                 sh 'cp "nodeConfigFiles/Robert Anthony.config" .'
